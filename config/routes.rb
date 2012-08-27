@@ -1,6 +1,12 @@
 ProfoundInstallations::Application.routes.draw do
 
   root :to => 'home#index'
+
+  match '/about' => 'home#about'
+  match '/gallery' => 'home#gallery'
+  match '/contact' => 'home#contact'
+  match '/testimonials' => 'home#testimonials'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
