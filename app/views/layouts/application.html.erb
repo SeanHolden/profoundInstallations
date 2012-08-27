@@ -40,23 +40,26 @@
       <div class="content">
               <%= yield %>
       </div><!--/content-->
-
-     <%###############################%>
-    <div class="tabbable"> <!-- Only required for left/right tabs -->
-    <ul class="nav nav-tabs">
-    <li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
-    <li><a href="#tab2" data-toggle="tab">Section 2</a></li>
-    </ul>
-    <div class="tab-content">
-    <div class="tab-pane active" id="tab1">
-    <p>I'm in Section 1.</p>
+      
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">ProfoundInstallations</a>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
     </div>
-    <div class="tab-pane" id="tab2">
-    <p>Howdy, I'm in Section 2.</p>
-    </div>
-    </div>
-    </div>
-    <%###############################%>
 
       <footer>
         <p>&copy; Company 2012</p>
