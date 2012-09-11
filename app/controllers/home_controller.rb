@@ -5,16 +5,20 @@ class HomeController < ApplicationController
   def about
   end
 
-  def gallery
-  end
-
-  def contact
-  end
-
-  def contact_post
-    @testing = "message"
-  end
-
   def testimonials
   end
+
+  def messagesent
+  end
+
+  def gallery
+    @albums = Album.all
+  end
+
+  # GET /gallery/:nameofdirectory
+  def gallery_album
+    @album = params[:nameofdirectory]
+    @number_of_images = Album.display(@album).count
+  end
+
 end

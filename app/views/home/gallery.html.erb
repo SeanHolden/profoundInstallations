@@ -1,22 +1,14 @@
-<h1>Gallery</h1>
+<h1>Gallery</h1><br />
+
 <div class="row">
-  <div class="span7">
-    <div id="myCarousel" class="carousel slide">
-      <!-- Carousel items -->
-      <div class="carousel-inner">
-        <div class="active item">
-          <%= image_tag("workexamples/001.jpg", :alt => "Conservatory") %>
-          <div class="carousel-caption">
-            <h4>First Thumbnail label</h4>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          </div>
-        </div>
-        <div class="item">…</div>
-        <div class="item">…</div>
+  <% @albums.reverse.each do |album| %>
+    <div class="span2">
+      <div class="img-polaroid">
+        <%= link_to image_tag("workexamples/"+album+"/"+album+"_1.jpg", :alt => album, :class =>"gallery_image", :size => "170x128"), "/gallery/"+album %>
+        <%= album.tr('_',' ').tr('0',',').capitalize %><br />
       </div>
-      <!-- Carousel nav -->
-      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div>
-  </div>
-</div>
+  <% end %>
+</div> 
+
+

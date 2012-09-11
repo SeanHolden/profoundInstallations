@@ -1,0 +1,11 @@
+<h1><%= @album.tr('_',' ').tr('0',',').capitalize %></h1> <br />
+
+<div class="row"> 
+  <% (1..@number_of_images).each do |num| %>
+    <div class="span2">
+      <%= image_tag("workexamples/"+@album+"/"+@album+"_"+num.to_s+".jpg", :alt => @album+"_"+num.to_s, :class => "img-polaroid2", :size => "170x128") %>
+    </div>
+  <% end %>  
+</div>
+
+

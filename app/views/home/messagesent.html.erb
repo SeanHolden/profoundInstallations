@@ -1,0 +1,5 @@
+<% unless flash[:notice].blank? %>
+  <div class="alert">
+    <%= content_tag :div, flash[:notice] %>
+  </div>
+<% end %>

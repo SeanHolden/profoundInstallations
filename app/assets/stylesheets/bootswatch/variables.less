@@ -208,8 +208,8 @@
 
 // Form states and alerts
 // -------------------------
-@warningText:             darken(@linkColor, 20%);
-@warningBackground:       lighten(@linkColor, 20%);
+@warningText:             #000; /*darken(@linkColor, 20%);*/
+@warningBackground:       #ff8f00; /*lighten(@linkColor, 20%);*/
 @warningBorder:           darken(spin(@warningBackground, -10), 3%);
 
 @errorText:               darken(#C45559, 5%);
@@ -220,7 +220,7 @@
 @successBackground:       #CDB;
 @successBorder:           darken(spin(@successBackground, -10), 5%);
 
-@infoText:                darken(#908A62, 5%);
+@infoText:                darken(#908A62, 5%); 
 @infoBackground:          #A7DFF1;
 @infoBorder:              darken(spin(@infoBackground, -10), 7%);
 
