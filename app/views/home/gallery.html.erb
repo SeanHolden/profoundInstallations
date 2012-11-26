@@ -1,14 +1,21 @@
 <h1>Gallery</h1><br />
 
 <div class="row">
-  <% @albums.reverse.each do |album| %>
+  <% @albums.each do |album| %>
     <div class="span2">
       <div class="img-polaroid">
         <%= link_to image_tag("workexamples/"+album+"/"+album+"_1.jpg", :alt => album, :class =>"gallery_image", :size => "170x128"), "/gallery/"+album %>
-        <%= album.tr('_',' ').tr('0',',').capitalize %><br />
+
+        <% if album.include? 'EPDM' %>
+          <%= album.tr('_',' ') %><br />
+        <% else %>
+          <%= album.tr('_0',' ,').capitalize %><br />
+        <% end %>
+
       </div>
     </div>
   <% end %>
 </div> 
+
 
 

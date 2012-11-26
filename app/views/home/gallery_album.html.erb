@@ -1,11 +1,13 @@
-<h1><%= @album.tr('_',' ').tr('0',',').capitalize %></h1> <br />
+<% unless @album.include? 'EPDM' %>
+  <h1><%= @album.tr('_0',' ,').capitalize %></h1> <br />
+<% else %>
+  <h1><%= @album.tr('_',' ') %></h1> <br />
+<% end %>
 
 <div class="row"> 
   <% (1..@number_of_images).each do |num| %>
     <div class="span2">
-      <%= image_tag("workexamples/"+@album+"/"+@album+"_"+num.to_s+".jpg", :alt => @album+"_"+num.to_s, :class => "img-polaroid2", :size => "170x128") %>
+      <%= link_to image_tag("workexamples/"+@album+"/"+@album+"_"+num.to_s+".jpg", :alt => @album+"_"+num.to_s, :class => "img-polaroid2", :size => "170x128"), "/assets/workexamples/"+@album+"/"+@album+"_"+num.to_s+".jpg", {:rel => "group", :class => "fancybox"} %>
     </div>
   <% end %>  
 </div>
-
-
