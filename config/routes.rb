@@ -1,6 +1,6 @@
 ProfoundInstallations::Application.routes.draw do
 
-  devise_for :admins, :skip => [:registrations] 
+  devise_for :admins, :skip => [:registrations, :passwords] 
 
   as :admin do
     get "/admin" => "devise/sessions#new"
