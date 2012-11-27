@@ -1,5 +1,12 @@
 ProfoundInstallations::Application.routes.draw do
 
+  devise_for :admins, :skip => [:registrations] 
+
+  as :admin do
+    get "/admin" => "devise/sessions#new"
+  end
+
+
   resources :contact
   root :to => 'home#index'
 

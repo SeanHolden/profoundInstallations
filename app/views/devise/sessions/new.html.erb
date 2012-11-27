@@ -1,0 +1,12 @@
+<h2>Sign in</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div><%= f.label :username, "Username:" %>
+  <%= f.text_field :username %></div>
+
+  <div><%= f.label :password, "Password:" %>
+  <%= f.password_field :password %></div>
+
+  <div><%= f.submit "Sign in" %></div>
+<% end %>
+
