@@ -7,6 +7,7 @@ ProfoundInstallations::Application.routes.draw do
   end
 
 
+  resources :cms, :only => [:create]
   resources :contact
   root :to => 'home#index'
 

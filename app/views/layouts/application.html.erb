@@ -48,19 +48,19 @@
 
     <%# MODAL START %>
     <!-- Modal -->
-    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="taglineModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3 id="myModalLabel">Edit tagline</h3>
       </div>
       
-      <%= form_tag("#", :method=>'post') do %>
+      <%= form_tag(cms_path(:page => 'layout', :attribute => 'tagline'), :method=>'post') do %>
         <div class="modal-body">
-          <%= text_field_tag "tagline", nil, :value => "#" %>
+          <%= text_area_tag "edited_text", nil, :class => 'text_area' ,:value => "#{CmsLayout.first.tagline}" %>
         </div>
           <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            <button class="btn btn-primary">Save changes</button>
+            <%= submit_tag "Save changes", :class=>"btn btn-primary" %>
         </div>
       <% end %>
     </div>
@@ -72,9 +72,9 @@
           <%= link_to image_tag("logo.png", :size => "322x110", :alt => "Profound Installations"), root_path %>
         </div>
         
-        <a href="#myModal" data-toggle="modal" class="edit_text">
+        <a href="#taglineModal" data-toggle="modal" class="edit_text">
           <div class="span4" id="tagline">
-           <h3><em>Energy efficient PVC and EPDM installation at its best</em></h3>           
+           <h3><em><%= "#{CmsLayout.first.tagline}" %></em></h3>           
           </div>
         </a>
 
