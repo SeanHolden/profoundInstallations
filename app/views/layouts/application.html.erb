@@ -20,25 +20,7 @@
   <body>
 
     <% if admin_signed_in? %>
-      <%# ADMIN BAR START %>
-      <div class="navbar" id="admin_bar">
-        <div class="navbar-inner" id="admin_bar">
-          <div class="container">
-            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            <span class="brand">Admin view</span>
-            <div class="container nav-collapse">
-              <ul class="nav">
-                <li><%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <%# ADMIN BAR END %>
+      <%= render 'layouts/admin_bar' %>
     <% end %>
 
     <%# FLASH MESSAGES START %>
@@ -64,16 +46,37 @@
     <% end %>
     <%# FLASH MESSAGES END %>
 
+    <%# MODAL START %>
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Edit tagline</h3>
+      </div>
+      
+      <%= form_tag("#", :method=>'post') do %>
+        <div class="modal-body">
+          <%= text_field_tag "tagline", nil, :value => "#" %>
+        </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary">Save changes</button>
+        </div>
+      <% end %>
+    </div>
+    <%# MODAL END %>
+
     <div class="container" id="sitecontainer">
       <div class="row">
         <div class="span4">
           <%= link_to image_tag("logo.png", :size => "322x110", :alt => "Profound Installations"), root_path %>
         </div>
         
-        <div class="span4" id="tagline">
-         <h3><em>Energy efficient PVC and EPDM installation at its best</em></h3>
-                    
-        </div>
+        <a href="#myModal" data-toggle="modal" class="edit_text">
+          <div class="span4" id="tagline">
+           <h3><em>Energy efficient PVC and EPDM installation at its best</em></h3>           
+          </div>
+        </a>
 
         <div class="span4" id="contactinfo">
           <h3>Rochdale/Littleborough<br />
