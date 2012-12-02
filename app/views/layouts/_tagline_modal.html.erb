@@ -1,0 +1,17 @@
+<!-- Modal -->
+<div id="taglineModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Edit tagline</h3>
+  </div>
+  
+  <%= form_tag(cms_path(:page => 'layout', :attribute => 'tagline'), :method=>'post') do %>
+    <div class="modal-body">
+      <%= text_area_tag "edited_text", "#{@cmslayout.tagline}", :class => 'text_area' %>
+    </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <%= submit_tag "Save changes", :class=>"btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
