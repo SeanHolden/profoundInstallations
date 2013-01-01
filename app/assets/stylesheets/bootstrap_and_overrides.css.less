@@ -1,12 +1,29 @@
 @import "twitter/bootstrap/bootstrap";
 
+td iframe#edited_text_ifr{
+  height:200px;
+}
+
 #admin_bar {
   background-color: black;
   background-image: none;
 }
 
 .modal{
-  width:720px;
+  left:0;
+  top:20px;
+  margin:0 0 0 20%;
+  width:750px;
+}
+
+.modal.fade.in{
+  left:0;
+  top:20px;
+  margin:0 0 0 20%;
+}
+
+.modal-body{
+  height:500px;
 }
 
 a.edit_text div:hover {
@@ -16,7 +33,8 @@ a.edit_text div:hover {
 }
 
 .text_area{
-  width:500px;
+  width:550px;
+  height:550px;
 }
 
 .content {
@@ -34,13 +52,6 @@ a.edit_text div:hover {
 
 input, textarea {
   width: auto;
-}
-
-.tagline-border {
-  border-radius: 6px 6px 6px 6px;
-  margin-top: 20px;
-  padding: 40px 20px 0px 20px;
-  float: right;
 }
 
 .img-polaroid {
@@ -72,11 +83,6 @@ input, textarea {
 
 .carousel-caption {
   border-radius: 0px 0px 10px 10px;
-}
-
-
-#tagline h3 {
-  color: #555;
 }
 
 #contactinfo h3 {

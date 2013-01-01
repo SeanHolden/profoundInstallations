@@ -1,5 +1,5 @@
 <a href="#taglineModal" data-toggle="modal" class="edit_text">
   <div class="span4" id="tagline">
-   <h3><em><%= "#{@cmslayout.tagline}" %></em></h3>           
+    <%= @cmslayout.tagline.html_safe %>           
   </div>
 </a>

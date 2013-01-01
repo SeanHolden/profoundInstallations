@@ -15,5 +15,4 @@
 //= require twitter/bootstrap
 //= require jquery.fancybox
 //= require profoundinstallations
-//= require_tree ./tiny_mce
 //
