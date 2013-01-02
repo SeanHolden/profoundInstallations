@@ -1,4 +1,4 @@
-<% @cmslayout = CmsLayout.first %>
+<%# @cmslayout = CmsLayout.first %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@
 
   <body>
 
-    <%= render 'layouts/admin_bar' if admin_signed_in? %>
+    <%#= render 'layouts/admin_bar' if admin_signed_in? %>
 
     <div class="container" id="sitecontainer">
       
@@ -29,8 +29,8 @@
         <div class="span4">
           <%= link_to image_tag("/assets/logo.png", :alt => "Profound Installations", :class=>"main_logo"), root_path %>
         </div>
-        <div class="span8">
-          <---- Carousel here ---->
+        <div class="span8 carousel_div">
+          <%= image_tag("gutter_carousel.png") %>
         </div>
       </div>
 
