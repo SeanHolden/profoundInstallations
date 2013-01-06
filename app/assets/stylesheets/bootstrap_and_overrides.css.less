@@ -1,4 +1,6 @@
 @import "twitter/bootstrap/bootstrap";
+
+
 body{
   color:#333;
 }
@@ -23,22 +25,6 @@ h1, h2, h3, h4, h5 {
   width:386px;
 }
 
-.company_logos{
-  text-align: right;
-  img{
-    height:75px;
-    width:150px;
-    /*border:1px solid black;*/
-    margin-top:50px;
-  }
-  img+img+img{
-    margin-top:10px;
-  }
-  .company_logo_right{
-    margin-left:30px;
-  }
-}
-
 .tagline{
   margin-top:10px;
   font-style:italic;
@@ -56,13 +42,47 @@ h1, h2, h3, h4, h5 {
   margin-left: 10px;
   text-align:right;
   h3{
-    font-size:150%;
+    font-size:120%;
     color:#31409D;
     span{
       color:#000;
     }
   }
 }
+
+.company_logos{
+  img{
+    height:60px;
+    width:120px;
+    margin-top:50px;
+  }
+  .company_logo_right{
+    margin-left:30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #contact_info{
+    h3{
+      font-size:150%;
+    }
+  }
+
+  .company_logos{
+    img{
+      height:75px;
+      width:150px;
+      margin-top:50px;
+    }
+    img+img+img{
+      margin-top:10px;
+    }
+    .company_logo_right{
+      margin-left:40px;
+    }
+  }
+} 
+
 
 .services{
   margin-top:20px;
@@ -76,7 +96,7 @@ h1, h2, h3, h4, h5 {
 
 .services_links{
   margin-bottom:30px;
-  margin-right:70px;
+  margin-right:60px;
   border-radius:5px;
 
   ul{
@@ -217,10 +237,6 @@ input, textarea {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 4px;
     margin-bottom: 10px;
-}
-
-#contactinfo h3 {
-  padding-left: 40px;
 }
 
 .intro{
