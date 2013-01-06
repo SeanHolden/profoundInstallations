@@ -12,43 +12,65 @@ We replace broken or failed glass units. If your double glazed units have conden
 
  %>
 
- <%# TODO:
-         COMPLETE THE CAROUSEL!!
-  %>
+<div class="row">
+  <div class="welcome span8">
+    <h3>Welcome...</h3>
+    <p> 
+      Profound Installations is a PVC and EPDM installation company based in the Rochdale and Littleborough area. We also do lots of other handy work, from general joinery and carpentry to fitting windows, doors and conservatories.
+    </p>
 
-<div class="welcome">
-  <h3>Welcome...</h3>
-  <p>Bacon ipsum dolor sit amet jerky ham hock bresaola doner ribeye pork chop. Flank strip steak ribeye ham t-bone. Venison ham corned beef fatback pancetta shankle sirloin ham hock pastrami shoulder cow hamburger capicola. Shankle meatball pastrami boudin rump jowl kielbasa. Spare ribs tenderloin tongue tri-tip.</p>
+    <p>
+      We take pride in our work and we really mean it when we say that our customers' needs are always our number one priority. Our mission is to ensure that you are happy and completely satisfied with our work, every step of the way. We always strive to give you great value for money while still producing an extremely high standard of work. There is no job too big or small!
+    </p>
 
-  <p>Pork loin capicola ground round salami pork chop prosciutto. Meatloaf spare ribs beef ribs sausage leberkas brisket capicola shank. Filet mignon spare ribs jerky kielbasa ground round tongue. Chuck ground round t-bone, ham biltong salami andouille tenderloin.</p>
-</div>
+    <p>
+      We have contacts in every trade so don't hesitate to ask if you have any doubts or just need a recommendation. We are always more than happy to help.
+    </p>
 
-<div class="row services">
-  <div class="span3 services_links">
-    <h3>Our Services</h3><br />
-    <div style="font-size:130%;">
-      <p><a href="#">General Carpentry</a></p><br />
-      <p><a href="#">Roofs</a></p><br />
-      <p><a href="#">Windows and Doors</a></p><br />
-      <p><a href="#">Conservatories</a></p><br />
-      <p><a href="#">Gates and Fencing</a></p><br />
-      <p><a href="#">Fitted Wardrobes</a></p>
-    </div>
+    <p>
+      Go to our <a href="/contact">contact page</a> now and get in touch with us for a free quote, or if you prefer, you can call us on 07827 920721.
+    </p>
   </div>
+  <div class="span4 company_logos">
+    <%= image_tag("rehau.jpg") %>
+    <%= image_tag("doorstop.jpg", :class=>"company_logo_right") %>
+    <%= image_tag("global roofs.jpg") %>
+    <%= image_tag("spectus.jpg", :class=>"company_logo_right") %>
+  </div>
+</div>
+<h3>What we do:</h3>
+<div class="row services">
+  
+  <div class="span3 services_links" id="services_nav">
+      <ul class="nav nav-list">
+        <li><a href="#general-carpentry" class="first"><i class="icon-chevron-right"></i> General Carpentry</a></li>
+        <li><a href="#fitted-wardrobes"><i class="icon-chevron-right"></i> Fitted Wardrobes</a></li>
+        <li><a href="#windows-and-doors"><i class="icon-chevron-right"></i> Windows and Doors</a></li>
+        <li><a href="#conservatories"><i class="icon-chevron-right"></i> Conservatories</a></li>
+        <li><a href="#gates-and-fencing"><i class="icon-chevron-right"></i> Gates and Fencing</a></li>
+        <li><a href="#pvc-fascia-soffit-and-gutter-replacement"><i class="icon-chevron-right"></i> PVC Fascia, Soffit and Gutter Replacement</a></li>
+        <li><a href="#epdm-roofs" class="last"><i class="icon-chevron-right"></i> EPDM Roofs</a></li>
+      </ul>
+    </div>
   
 
-  <div class="span8">
-    <div class="services_left">
-      <h4>General Carpentry</h4>
+  <div class="span8 services_main_content">
+    <div class="services_left" id="general-carpentry">
+      <h4>General Carpentry and Joinery</h4>
       <%= image_tag("joiner.jpg", :style=>"float:left;", :alt=>"image1") %>
       <p>
-        Frankfurter pork cow tri-tip strip steak. Boudin meatloaf shank kielbasa shoulder, turkey pig capicola pork shankle t-bone filet mignon biltong. Filet mignon boudin tri-tip strip steak prosciutto. Boudin prosciutto venison, meatloaf shankle salami short ribs chicken strip steak t-bone pig. Bresaola ham ham hock prosciutto capicola.
+        We offer a wide range of general carpentry and joinery work, such as fascia and soffits, doors, windows, roofs and flooring. There really is no job too big or small, but if you are not sure about anything, just ask!
       </p>
+
       <p>
-        Shankle drumstick shank swine prosciutto, rump meatball pastrami tail jerky jowl spare ribs doner fatback short loin. Pork chop sirloin tongue t-bone. Boudin pork belly short loin biltong, beef ribs kielbasa flank pancetta. Pork salami leberkas turducken. Turducken flank bacon ham hock chuck. Swine beef ribs kielbasa, beef capicola short ribs ham hock turkey strip steak. Boudin sausage hamburger short ribs.
+        We have excellent contacts in every trade, so if you feel that something is not really in our line of work, we will be more than happy to offer a recommendation.
+      </p>
+      
+      <p>
+        Our main work areas are Rochdale and Littleborough but we can go further, depending on the job.
       </p>
     </div>
-    <div class="services_right">
+    <div class="services_right" id="fitted-wardrobes">
       <h4>Fitted Wardrobes</h4>
       <%= image_tag("fitted_wardrobe.jpg", :alt=>"image1") %>
       <p>
@@ -58,7 +80,7 @@ We replace broken or failed glass units. If your double glazed units have conden
       <p>Fatback prosciutto swine boudin sirloin turducken. Andouille spare ribs drumstick strip steak. Tri-tip jerky swine venison chicken chuck. Flank corned beef swine jerky. Short loin strip steak shoulder biltong sirloin bresaola andouille ball tip beef ribs tri-tip ham tongue meatball leberkas chuck.
       </p>
     </div>
-    <div class="services_left">
+    <div class="services_left" id="windows-and-doors">
       <h4>Windows and Doors</h4>
       <%= image_tag("window.jpg", :alt=>"window") %>
       <p>Ham corned beef pig shoulder sausage frankfurter, kielbasa flank pastrami rump andouille turducken tenderloin. Tenderloin chicken shoulder, ball tip pork drumstick capicola sirloin. Ham tongue pork belly shankle, pork swine bresaola chicken. Cow tri-tip rump meatball tail, brisket ham hock.</p>
@@ -66,7 +88,7 @@ We replace broken or failed glass units. If your double glazed units have conden
       <%= image_tag("door.jpg", :alt=>"door", :class=>"second_img") %>
       <p>Kielbasa biltong ham pastrami, pork leberkas jowl tongue rump meatball turducken sirloin filet mignon. Brisket frankfurter short loin pastrami chuck pig t-bone tail strip steak leberkas capicola meatball ribeye ham. Prosciutto meatloaf salami, flank frankfurter beef cow chuck shankle shank filet mignon. Filet mignon ground round corned beef tongue turducken frankfurter andouille. Short ribs pancetta chuck leberkas, doner pork belly turducken brisket pig andouille shank hamburger tenderloin pork chop prosciutto.</p>
     </div>
-    <div class="services_right">
+    <div class="services_right" id="conservatories">
       <h4>Conservatories</h4>
       <%= image_tag("conservatory.jpg", :alt=>"image1") %>
       <p>
@@ -76,7 +98,7 @@ We replace broken or failed glass units. If your double glazed units have conden
       <p>Fatback prosciutto swine boudin sirloin turducken. Andouille spare ribs drumstick strip steak. Tri-tip jerky swine venison chicken chuck. Flank corned beef swine jerky. Short loin strip steak shoulder biltong sirloin bresaola andouille ball tip beef ribs tri-tip ham tongue meatball leberkas chuck.
       </p>
     </div>
-    <div class="services_left">
+    <div class="services_left" id="gates-and-fencing">
       <h4>Gates and Fencing</h4>
       <%= image_tag("gate.jpg", :style=>"float:left;", :alt=>"gate") %>
       <p>
@@ -86,7 +108,7 @@ We replace broken or failed glass units. If your double glazed units have conden
         Shankle drumstick shank swine prosciutto, rump meatball pastrami tail jerky jowl spare ribs doner fatback short loin. Pork chop sirloin tongue t-bone. Boudin pork belly short loin biltong, beef ribs kielbasa flank pancetta. Pork salami leberkas turducken. Turducken flank bacon ham hock chuck. Swine beef ribs kielbasa, beef capicola short ribs ham hock turkey strip steak. Boudin sausage hamburger short ribs.
       </p>
     </div>
-    <div class="services_right">
+    <div class="services_right" id="pvc-fascia-soffit-and-gutter-replacement">
       <h4>PVC Fascia, Soffit and Gutter Replacement</h4>
       <%= image_tag("fascia_soffit_and_gutter_replacement.jpg", :alt=>"fascia soffit and gutter replacement") %>
       <p>
@@ -96,7 +118,7 @@ We replace broken or failed glass units. If your double glazed units have conden
       <p>Fatback prosciutto swine boudin sirloin turducken. Andouille spare ribs drumstick strip steak. Tri-tip jerky swine venison chicken chuck. Flank corned beef swine jerky. Short loin strip steak shoulder biltong sirloin bresaola andouille ball tip beef ribs tri-tip ham tongue meatball leberkas chuck.
       </p>
     </div>
-    <div class="services_left">
+    <div class="services_left" id="epdm-roofs">
       <h4>EPDM Roofs</h4>
       <%= image_tag("epdm_flatroof.jpg", :alt=>"epdm flat roof") %>
       <p>
@@ -108,6 +130,3 @@ We replace broken or failed glass units. If your double glazed units have conden
     </div>
   </div>
 </div>
-
-
-

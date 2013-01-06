@@ -19,20 +19,27 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
     <%#= render 'layouts/admin_bar' if admin_signed_in? %>
 
     <div class="container" id="sitecontainer">
       
       <div class='row'>
-        <div class="span4">
+        <div class="span4 logo_div">
           <%= link_to image_tag("/assets/logo.png", :alt => "Profound Installations", :class=>"main_logo"), root_path %>
         </div>
-        <div class="span8 carousel_div">
-          <%= image_tag("gutter_carousel.png") %>
+        <div class="span5 tagline">
+          <h3>Energy efficient PVC and EPDM installation at its best</h3>
         </div>
+        <div class="span3" id="contact_info">
+          <h3>Rochdale/Littleborough<br />
+              Tel: <span>07827 920721</span></h3>
+        </div>
+
       </div>
+
+
 
         
       <%# NAVBAR START %>

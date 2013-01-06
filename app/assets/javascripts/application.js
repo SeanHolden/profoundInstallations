@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery.fancybox
+//= require jquery-scrolltofixed-min
 //= require profoundinstallations
 //

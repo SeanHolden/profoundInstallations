@@ -1,13 +1,11 @@
-//carousel
 $(document).ready(function () {
-    $('.carousel').carousel('cycle',{
-        interval: 5000,
-        pause: 'hover'
-    });
-});
-
-//fancybox
-$(document).ready(function() {
+  // carousel
+  $('.carousel').carousel('cycle',{
+      interval: 5000,
+      pause: 'hover'
+  });
+    
+  // fancybox
   $(".fancybox").fancybox({
     helpers : {
       overlay : {
@@ -17,4 +15,12 @@ $(document).ready(function() {
       }
     }
   });
+
+  // 
+  if ($(window).width() < 970){
+   // Do nothing as this is mobile view
+  }else{ // allow fixed position scrolling of side nav
+    $('#services_nav').scrollToFixed({ marginTop: 20 });
+  };
+
 });
