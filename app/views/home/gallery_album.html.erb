@@ -6,8 +6,8 @@
 
 <div class="row"> 
   <% (1..@number_of_images).each do |num| %>
-    <div class="span2">
-      <%= link_to image_tag("workexamples/"+@album+"/"+@album+"_"+num.to_s+".jpg", :alt => @album+"_"+num.to_s, :class => "img-polaroid2", :size => "170x128"), "/assets/workexamples/"+@album+"/"+@album+"_"+num.to_s+".jpg", {:rel => "group", :class => "fancybox"} %>
+    <div class="span2 gallery_images">
+      <%= link_to image_tag("workexamples/"+@album+"/"+@album+"_"+num.to_s+".jpg", :alt => @album+"_"+num.to_s, :class => "img-polaroid2"), "/assets/workexamples/"+@album+"/"+@album+"_"+num.to_s+".jpg", {:rel => "group", :class => "fancybox"} %>
     </div>
   <% end %>  
 </div>
