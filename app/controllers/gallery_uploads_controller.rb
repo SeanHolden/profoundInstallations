@@ -4,10 +4,13 @@ class GalleryUploadsController < ApplicationController
   layout 'dashboard', :only => [:index]
 
   def create
-    tmp = params[:file_upload][:my_file].tempfile
-    file = File.join("public", params[:file_upload][:my_file].original_filename)
-    FileUtils.cp tmp.path, file
-
+    # This is an array of the files uploaded
+    tmp_files = params[:file_upload][:my_file]
+    tmp_files.each do |tmp_file|
+      tmp = tmp_file.tempfile
+      file = File.join("public", tmp_file.original_filename)
+      FileUtils.cp tmp.path, file
+    end
     redirect_to gallery_uploads_path, :notice => 'Successfully uploaded image'
   end
 end
