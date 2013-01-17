@@ -1,0 +1,2 @@
+module GalleryUploadsHelper
+end

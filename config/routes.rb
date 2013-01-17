@@ -8,6 +8,7 @@ ProfoundInstallations::Application.routes.draw do
 
   # Admin dashboard
   match '/admin/dashboard' => 'dashboard#index'
+  match '/admin/dashboard/gallery' => 'dashboard#gallery'
 
 
   resources :cms, :only => [:create]
