@@ -6,13 +6,9 @@ ProfoundInstallations::Application.routes.draw do
     get "/admin" => "devise/sessions#new"
   end
 
-  # Admin dashboard
-  match '/admin/dashboard' => 'dashboard#index'
-  match '/admin/dashboard/gallery' => 'dashboard#gallery'
-
-
   resources :cms, :only => [:create]
   resources :contact
+  resources :gallery_uploads, :only => [:index, :create]
   root :to => 'home#index'
 
   match '/about' => 'home#about'
@@ -22,5 +18,9 @@ ProfoundInstallations::Application.routes.draw do
 
   # Gallery
   match '/gallery/:nameofdirectory' => 'home#gallery_album'
+
+  # Admin dashboard
+  match '/admin/dashboard' => 'dashboard#index'
+  match '/admin/dashboard/gallery' => 'dashboard#gallery'
 
 end
