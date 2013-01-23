@@ -5,7 +5,7 @@ class GalleryUploadsController < ApplicationController
 
   def create
     # This is an array of the files uploaded
-    tmp_files = params[:file_upload][:my_file]
+    tmp_files = params[:file_upload][:my_files]
     tmp_files.each do |tmp_file|
       tmp = tmp_file.tempfile
       file = File.join("public", tmp_file.original_filename)
@@ -32,6 +32,6 @@ end
 
 # Album
 
-# ID     NAME                    TITLE        ALBUM_COVER
+# ID     URL_NAME                 TITLE        ALBUM_COVER
 # 1      EPDM_Flat_Roof           Flat roof   '/album_covers/EPDM_Flat_Roof'
 # 2      Wood_Grain_Back_Door     Back door   '/album_covers/Wood_Grain_Back_Door'

@@ -1,6 +1,9 @@
 <h1>Gallery uploads</h1>
 
-<%= form_for :file_upload, :html => {:multipart => true} do |f| %>
-  <%= f.file_field :my_file, :multiple=>true %>
-  <%= f.submit "Upload" %>
+<%= form_for :file_upload, :html => {:multipart => true, :id=>'gallery_upload'} do |f| %>
+  <%= f.label :my_files, 'Title of album (e.g. Flat Roof):' %>
+  <%= f.text_field :title %><br />
+  <%= f.label :my_files, 'Choose the images you want to add to this album:' %>
+  <%= f.file_field :my_files, :multiple=>true %><br />
+  <%= f.submit "Upload", :class=>'btn btn-primary upload_button' %>
 <% end %>
