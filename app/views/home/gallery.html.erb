@@ -4,14 +4,8 @@
   <% @albums.each do |album| %>
     <div class="span2">
       <div class="img-polaroid">
-        <%= link_to image_tag("workexamples/"+album+"/"+album+"_1.jpg", :alt => album, :class =>"gallery_image"), "/gallery/"+album %>
-
-        <% if album.include? 'EPDM' %>
-          <%= album.tr('_',' ') %><br />
-        <% else %>
-          <%= album.tr('_0',' ,').capitalize %><br />
-        <% end %>
-
+        <%= link_to image_tag(album.cover_image, :alt => album.title, :class =>"gallery_image"), "/gallery/"+album.slug %>
+        <p><%= album.title %></p>
       </div>
     </div>
   <% end %>

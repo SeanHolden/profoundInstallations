@@ -17,7 +17,7 @@ ProfoundInstallations::Application.routes.draw do
   match 'messagesent' => 'home#messagesent'
 
   # Gallery
-  match '/gallery/:nameofdirectory' => 'home#gallery_album'
+  match '/gallery/:gallery_url' => 'home#gallery_album'
 
   # Admin dashboard
   match '/admin/dashboard' => 'dashboard#index'

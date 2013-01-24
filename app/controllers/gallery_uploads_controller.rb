@@ -4,19 +4,37 @@ class GalleryUploadsController < ApplicationController
   layout 'dashboard', :only => [:index]
 
   def create
-    # This is an array of the files uploaded
-    tmp_files = params[:file_upload][:my_files]
-    tmp_files.each do |tmp_file|
-      tmp = tmp_file.tempfile
-      file = File.join("public", tmp_file.original_filename)
-      FileUtils.cp tmp.path, file
+    images      = params[:file_upload][:my_files]
+    album_title = params[:file_upload][:title]
+    slug = album_title.downcase.strip.gsub(' ', '_').gsub(/[^\w-]/, '')
+    album = Album.new(:title => album_title, :slug=>slug)
+    if album.save
+      gallery_id = album.id
+      directory_location = "public/assets/workexamples/#{slug}"
+      FileUtils.mkdir directory_location
+      upload_images(images, directory_location, gallery_id)
+      cover_image = Image.find_by_gallery_id(gallery_id).file_location
+      album.update_attributes(:cover_image=>cover_image)
+      redirect_to gallery_uploads_path, :notice => 'Successfully uploaded image'
+    else
+      redirect_to gallery_uploads_path, :alert => 'Something went wrong. Album not saved.'
     end
-    redirect_to gallery_uploads_path, :notice => 'Successfully uploaded image'
+  end
+
+  private
+  
+  def upload_images(images, directory_location, gallery_id)
+    images = params[:file_upload][:my_files]
+    images.each do |image|
+      tmp = image.tempfile
+      file = File.join(directory_location, image.original_filename)
+      FileUtils.cp tmp.path, file
+      sliced_location = directory_location.gsub('public/assets/','')
+      Image.create(:gallery_id=>gallery_id, :file_location=>sliced_location+'/'+image.original_filename)
+    end
   end
 end
 
-
-# TODO make these tables:
 
 # TABLES:
 
@@ -32,6 +50,6 @@ end
 
 # Album
 
-# ID     URL_NAME                 TITLE        ALBUM_COVER
-# 1      EPDM_Flat_Roof           Flat roof   '/album_covers/EPDM_Flat_Roof'
-# 2      Wood_Grain_Back_Door     Back door   '/album_covers/Wood_Grain_Back_Door'
+# ID     TITLE
+# 1      Flat roof
+# 2      Back door

@@ -15,10 +15,11 @@ class HomeController < ApplicationController
     @albums = Album.all
   end
 
-  # GET /gallery/:nameofdirectory
+  # GET /gallery/:gallery_url
   def gallery_album
-    @album = params[:nameofdirectory]
-    @number_of_images = Album.display(@album).count
+    slug = params[:gallery_url]
+    gallery_id = Album.find_by_slug(slug).id
+    @images = Image.where(:gallery_id=>gallery_id)
   end
 
 end
