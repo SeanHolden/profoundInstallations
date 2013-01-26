@@ -1,9 +1,18 @@
-<h1>Gallery uploads</h1>
-
-<%= form_for :file_upload, :html => {:multipart => true, :id=>'gallery_upload'} do |f| %>
-  <%= f.label :title, 'Title of album (e.g. \'Flat Roof\'):' %>
-  <%= f.text_field :title %><br />
-  <%= f.label :my_files, 'Choose the images you want to add to this album:' %>
-  <%= f.file_field :my_files, :multiple=>true %><br />
-  <%= f.submit "Upload", :class=>'btn btn-primary upload_button' %>
-<% end %>
+<%= link_to 'Add new album', new_gallery_upload_path, :class=>'btn btn-primary add_new_album' %>
+<div class="row">
+  <% @albums.each do |album| %>  
+      <div class="span img-polaroid-container">
+        <div class="img-polaroid">
+          <%= image_tag(album.cover_image, :alt => album.title) %>
+          <p><%= album.title %></p>
+        </div>
+          <%= button_to "Edit Album", edit_gallery_upload_path(album.id),
+                                        :class=>'btn btn-success', 
+                                        :method=>:get %>
+          <%= button_to "Delete Album", gallery_upload_path(album.id), 
+                                        :confirm => "Are you sure?", 
+                                        :method => :delete, 
+                                        :class=>'btn btn-danger' %>
+      </div>
+  <% end %>
+</div>

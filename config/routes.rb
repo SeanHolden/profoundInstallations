@@ -8,7 +8,7 @@ ProfoundInstallations::Application.routes.draw do
 
   resources :cms, :only => [:create]
   resources :contact
-  resources :gallery_uploads, :only => [:index, :create]
+  resources :gallery_uploads
   root :to => 'home#index'
 
   match '/about' => 'home#about'

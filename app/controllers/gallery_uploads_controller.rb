@@ -1,7 +1,11 @@
 require 'fileutils'
 
 class GalleryUploadsController < ApplicationController
-  layout 'dashboard', :only => [:index]
+  layout 'dashboard', :only => [:index, :new, :edit]
+
+  def index
+    @albums = Album.all
+  end
 
   def create
     images      = params[:file_upload][:my_files]
@@ -22,6 +26,25 @@ class GalleryUploadsController < ApplicationController
     end
   end
 
+  def destroy
+    id = params[:id]
+    album = Album.find(id).destroy
+    FileUtils.rm_rf("public/assets/workexamples/#{album.slug}")
+    redirect_to gallery_uploads_path
+  end
+
+  def edit
+    id = params[:id]
+    @images = Image.where(:gallery_id=>id)
+  end
+
+  def update
+    id = params[:id]
+    image = Image.find(id).destroy
+    FileUtils.rm("public/assets/#{image.file_location}")
+    redirect_to edit_gallery_upload_path(image.gallery_id)
+  end
+
   private
 
   def check_images_are_valid(images)
@@ -34,7 +57,7 @@ class GalleryUploadsController < ApplicationController
     end
     return true
   end
-  
+
   def upload_images(images, directory_location, gallery_id)
     images.each do |image|
       tmp = image.tempfile

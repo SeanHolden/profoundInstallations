@@ -4,12 +4,9 @@
   <% @albums.each do |album| %>
     <div class="span2">
       <div class="img-polaroid">
-        <%= link_to image_tag(album.cover_image, :alt => album.title, :class =>"gallery_image"), "/gallery/"+album.slug %>
+        <%= link_to image_tag(album.cover_image, :alt => album.title), "/gallery/"+album.slug %>
         <p><%= album.title %></p>
       </div>
     </div>
   <% end %>
 </div> 
-
-
-

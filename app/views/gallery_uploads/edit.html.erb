@@ -1,0 +1,11 @@
+<div class='row'>
+  <% @images.each do |image| %>
+    <div class='span2'>
+      <%= image_tag(image.file_location, :alt => image.file_location.gsub(/.*\//,'').gsub(/\..*/,'')) %>
+    </div>
+    <%= button_to "Delete Image", gallery_upload_path(image.id), 
+                              :confirm => "Are you sure?", 
+                              :method => :put, 
+                              :class=>'btn btn-danger' %>
+  <% end %>
+</div>
