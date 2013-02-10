@@ -5,6 +5,7 @@ class Image < ActiveRecord::Base
 
   def self.check_images_are_valid(images)
     valid_extensions = ['jpg','jpeg','png','gif']
+    return false if images.nil?
     images.each do |image|
       return false unless image.original_filename.include?('.')
       extension = image.original_filename.split('.')[1]
@@ -36,5 +37,4 @@ class Image < ActiveRecord::Base
       return image.original_filename
     end
   end
-
 end

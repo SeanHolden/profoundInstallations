@@ -12,6 +12,14 @@
   </div>
 <% end %>
 
+<h3>Gallery Album Uploads</h3>
+
+<ol>
+  <li>Click add new album.</li>
+  <li>Choose title and the images you want to upload.</li>
+  <li>Click 'upload' button and your gallery will now be visible to the public.</li>
+</ol>
+
 <%= link_to 'Add new album', new_gallery_upload_path, :class=>'btn btn-warning btn-large add_new_album' %>
 <div class="row">
   <% @albums.each do |album| %>  

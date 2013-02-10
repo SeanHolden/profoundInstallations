@@ -12,7 +12,8 @@ class GalleryUploadsController < ApplicationController
     album_title = params[:file_upload][:title]
     slug = album_title.downcase.strip.gsub(' ', '_').gsub(/[^\w-]/, '')
     album = Album.new(:title => album_title, :slug=>slug)
-    if Image.check_images_are_valid(images) == true
+    if Image.check_images_are_valid(images) == true && album_title != ''
+      puts 'didnt work'
       album.save
       gallery_id = album.id
       directory_location = "public/assets/workexamples/#{slug}"

@@ -1,7 +1,7 @@
 class ImageUploadsController < ApplicationController
 
   def create
-    images = params[:file_upload][:my_files]
+    images = assign_images(params[:file_upload])
     gallery_id = params[:gallery_id]
     album = Album.find(gallery_id)
     directory_name = album.slug
@@ -30,4 +30,13 @@ class ImageUploadsController < ApplicationController
     redirect_to edit_gallery_upload_path(image.gallery_id)
   end
 
+  private
+
+  def assign_images(files)
+    if files.nil?
+      return nil
+    else
+      return files[:my_files]
+    end
+  end
 end
