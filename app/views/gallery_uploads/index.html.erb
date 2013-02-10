@@ -1,4 +1,26 @@
-<%= link_to 'Add new album', new_gallery_upload_path, :class=>'btn btn-primary add_new_album' %>
+<% unless flash[:notice].blank? %>
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= content_tag :div, flash[:notice] %>
+  </div>
+<% end %>
+
+<% unless flash[:alert].blank? %>
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= content_tag :div, flash[:alert] %>
+  </div>
+<% end %>
+
+<h3>Gallery Album Uploads</h3>
+
+<ol>
+  <li>Click add new album.</li>
+  <li>Choose title and the images you want to upload.</li>
+  <li>Click 'upload' button and your gallery will now be visible to the public.</li>
+</ol>
+
+<%= link_to 'Add new album', new_gallery_upload_path, :class=>'btn btn-warning btn-large add_new_album' %>
 <div class="row">
   <% @albums.each do |album| %>  
       <div class="span img-polaroid-container">
@@ -6,13 +28,13 @@
           <%= image_tag(album.cover_image, :alt => album.title) %>
           <p><%= album.title %></p>
         </div>
-          <%= button_to "Edit Album", edit_gallery_upload_path(album.id),
-                                        :class=>'btn btn-success', 
-                                        :method=>:get %>
-          <%= button_to "Delete Album", gallery_upload_path(album.id), 
-                                        :confirm => "Are you sure?", 
-                                        :method => :delete, 
-                                        :class=>'btn btn-danger' %>
+        <%= button_to "Edit Album", edit_gallery_upload_path(album.id),
+                                      :class=>'btn btn-success', 
+                                      :method=>:get %>
+        <%= button_to "Delete Album", gallery_upload_path(album.id), 
+                                      :confirm => "Are you sure you want to delete this album?", 
+                                      :method => :delete, 
+                                      :class=>'btn btn-danger' %>
       </div>
   <% end %>
 </div>
