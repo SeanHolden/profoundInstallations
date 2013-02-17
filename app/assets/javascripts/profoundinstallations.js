@@ -22,5 +22,4 @@ $(document).ready(function () {
   }else{ // allow fixed position scrolling of side nav
     $('#services_nav').scrollToFixed({ marginTop: 20 });
   };
-
 });

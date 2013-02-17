@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   end
 
   def testimonials
+    @testimonials = Testimonial.all
   end
 
   def messagesent
