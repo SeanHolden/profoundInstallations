@@ -16,4 +16,5 @@
 //= require jquery.fancybox
 //= require jquery-scrolltofixed-min
 //= require profoundinstallations
+//= require_self
 //
