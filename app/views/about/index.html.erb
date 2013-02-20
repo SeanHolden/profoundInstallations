@@ -1,3 +1,11 @@
 <h1>About Page</h1>
+
+<% unless flash[:notice].blank? %>
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= content_tag :div, flash[:notice] %>
+  </div>
+<% end %>
+
 <p><%= sanitize(simple_format(@about.body), :tags => %w(br p) ) %></p>
 <%= link_to 'edit', edit_about_path(1), :class=>'btn btn-success' %>

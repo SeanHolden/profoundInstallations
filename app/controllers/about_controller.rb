@@ -15,6 +15,6 @@ class AboutController < ApplicationController
   def update
    	body = params[:body]
   	About.first.update_attributes(:body=> body)
-  	redirect_to about_index_path
+  	redirect_to about_index_path, :notice => 'Successfully updated About page.'
   end
 end
