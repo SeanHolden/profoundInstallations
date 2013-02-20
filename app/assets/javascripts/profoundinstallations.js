@@ -1,9 +1,4 @@
-$(document).ready(function () {
-  // carousel
-  $('.carousel').carousel('cycle',{
-      interval: 5000,
-      pause: 'hover'
-  });
+window.onload = function () {
     
   // fancybox
   $(".fancybox").fancybox({
@@ -21,6 +16,5 @@ $(document).ready(function () {
    // Do nothing as this is mobile view
   }else{ // allow fixed position scrolling of side nav
     $('#services_nav').scrollToFixed({ marginTop: 20 });
-  };
-
-});
+  }
+};

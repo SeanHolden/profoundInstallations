@@ -9,12 +9,6 @@ h1, h2, h3, h4, h5 {
   color:#333;
 }
 
-/* carousel size:; */
-/*789x115*/
-
-/* index page images size:; */
-/* 220x170 */
-
 .welcome{
   padding-bottom:5px;
   text-align:justify;
@@ -240,6 +234,10 @@ input, textarea {
   margin-bottom:15px;
 }
 
+.add_new_testimonial{
+  margin-bottom:15px;
+}
+
 .album_title{
   margin-bottom:50px;
 }
@@ -254,6 +252,27 @@ input, textarea {
   margin-top:40px;
 }
 
+.admin_testimonial{
+  padding:5px;
+  margin-bottom:10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.testimonial{
+  padding:5px;
+  margin-bottom:10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.edit_testimonial_text_area{
+  height: 200px;
+  width: 80%;
+}
+
+
+
 @import "twitter/bootstrap/responsive";
 
 @import "bootswatch/variables.less";
@@ -263,6 +282,10 @@ input, textarea {
 @iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
 @iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
 
+// Font Awesome
+@fontAwesomeEotPath_iefix: asset-path("fontawesome-webfont.eot#iefix");
+@import "fontawesome";
+
 // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
 // Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not 
 //       have the proper paths. So for now we use the absolute path.
@@ -271,8 +294,7 @@ input, textarea {
 @fontAwesomeTtfPath: '/assets/fontawesome-webfont.ttf';
 @fontAwesomeSvgPath: '/assets/fontawesome-webfont.svg';
 
-// Font Awesome
-@import "fontawesome";
+
 
 // Your custom LESS stylesheets goes here
 //

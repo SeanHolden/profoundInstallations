@@ -1,0 +1,16 @@
+<%= link_to '<< Back to testimonials', testimonials_path %>
+<h1>Edit Testimonial</h1>
+
+<%= form_tag(testimonial_path, :method=>'put') do %>
+   <p>
+    <%= label_tag "name", "Who said it?:" %>
+    <%= text_field_tag "name", @testimonial.name %>
+  </p>
+  <p>
+    <%= label_tag "body", "What did they say?:" %>
+    <%= text_area_tag "body", @testimonial.body, :class=>'edit_testimonial_text_area' %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %>
+  </p>
+<% end %>

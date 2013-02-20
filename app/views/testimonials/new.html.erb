@@ -1,0 +1,15 @@
+<h1>Create new testimonial</h1>
+
+<%= form_tag(testimonials_path, :method=>'post') do %>
+   <p>
+    <%= label_tag "name", "Who said it?:" %>
+    <%= text_field_tag "name" %>
+  </p>
+  <p>
+    <%= label_tag "body", "What did they say?:" %>
+    <%= text_area_tag "body", nil, :class=>'edit_testimonial_text_area' %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %>
+  </p>
+<% end %>

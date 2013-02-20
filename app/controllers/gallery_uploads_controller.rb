@@ -30,8 +30,10 @@ class GalleryUploadsController < ApplicationController
   def destroy
     id = params[:id]
     album = Album.find(id).destroy
+    # Destroy all images that were inside this album.
+    Image.where(gallery_id: id).destroy_all
     FileUtils.rm_rf("public/assets/workexamples/#{album.slug}")
-    redirect_to gallery_uploads_path
+    redirect_to gallery_uploads_path, :notice => 'Successfully deleted album'
   end
 
   def edit
