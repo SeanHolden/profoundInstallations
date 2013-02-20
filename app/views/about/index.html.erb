@@ -1,0 +1,3 @@
+<h1>About Page</h1>
+<p><%= sanitize(simple_format(@about.body), :tags => %w(br p) ) %></p>
+<%= link_to 'edit', edit_about_path(1), :class=>'btn btn-success' %>

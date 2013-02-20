@@ -1,0 +1,7 @@
+<h1>Edit About Page</h1>
+
+<%= form_tag(about_path(1), :method => :put) do %>
+  <%= label_tag :body %>
+  <%= text_area_tag :body, @about.body, :class=> 'admin_about_text_area' %><br />
+  <%= submit_tag %>
+<% end %>

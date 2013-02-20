@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   end
 
   def about
+    @about_text = About.first.body
   end
 
   def testimonials

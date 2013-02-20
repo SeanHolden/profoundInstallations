@@ -11,6 +11,7 @@ ProfoundInstallations::Application.routes.draw do
   resources :gallery_uploads, :path => '/admin/gallery_uploads'
   resources :image_uploads, :only => [:destroy, :update, :create], :path => '/admin/image_uploads'
   resources :testimonials, :path => '/admin/testimonials'
+  resources :about, :only => [:index, :edit, :update], :path => '/admin/about'
 
   root :to => 'home#index'
 
