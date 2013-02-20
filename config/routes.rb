@@ -8,10 +8,9 @@ ProfoundInstallations::Application.routes.draw do
 
   resources :cms, :only => [:create]
   resources :contact
-  resources :gallery_uploads
-  resources :image_uploads, :only => [:destroy, :update, :create]
-
-
+  resources :gallery_uploads, :path => '/admin/gallery_uploads'
+  resources :image_uploads, :only => [:destroy, :update, :create], :path => '/admin/image_uploads'
+  resources :testimonials, :path => '/admin/testimonials'
 
   root :to => 'home#index'
 
