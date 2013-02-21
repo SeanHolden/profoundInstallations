@@ -1,3 +1,10 @@
+<% unless flash[:notice].blank? %>
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= content_tag :div, flash[:notice] %>
+  </div>
+<% end %>
+
 <h1>Contact Us</h1>
 
 <p>Getting in contact with us is easy! Either use the form below or call us on 07827 920721.</p>

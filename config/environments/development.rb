@@ -37,4 +37,14 @@ ProfoundInstallations::Application.configure do
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
   # config.serve_static_assets = false
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'domain_name',
+    :user_name            => '<username>',
+    :password             => '<password>',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
 end
