@@ -5,6 +5,6 @@ class UserMailer < ActionMailer::Base
     @name = name
     @email = email
     @message = message
-    mail(:to => '<email_address>', :subject => "New message from #{name}")
+    mail(:to => APP_CONFIG['email_address'], :subject => "New message from #{name}")
   end
 end

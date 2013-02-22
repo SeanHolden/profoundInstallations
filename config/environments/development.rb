@@ -1,4 +1,5 @@
 ProfoundInstallations::Application.configure do
+  APP_CONFIG = YAML.load_file("#{Rails.root}/config/config.yml")
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -43,8 +44,8 @@ ProfoundInstallations::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'domain_name',
-    :user_name            => '<username>',
-    :password             => '<password>',
+    :user_name            => APP_CONFIG['email_address'],
+    :password             => APP_CONFIG['email_password'],
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 end
