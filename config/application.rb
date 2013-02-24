@@ -55,6 +55,9 @@ module ProfoundInstallations
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    
+    # Allowing extra files to be compiled
+    config.assets.precompile += ['gallery_uploads.js']
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
