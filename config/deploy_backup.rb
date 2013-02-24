@@ -5,7 +5,7 @@ set :application, "profoundInstallations"
 set :repository,  "https://github.com/SeanHolden/profoundInstallations.git"
 
 set :scm, :git
-server "198.211.124.44", :web, :app, :db, :primary => true
+server "<domain name>", :web, :app, :db, :primary => true
 
 set :deploy_to, "/home/sean/webapps/#{application}" 
 
