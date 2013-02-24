@@ -1,4 +1,5 @@
 class ImageUploadsController < ApplicationController
+  before_filter :authenticate_admin!
 
   def create
     images = assign_images(params[:file_upload])

@@ -1,6 +1,7 @@
 require 'fileutils'
 
 class GalleryUploadsController < ApplicationController
+  before_filter :authenticate_admin!
   layout 'dashboard', :only => [:index, :new, :edit]
 
   def index

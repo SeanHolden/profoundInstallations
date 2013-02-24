@@ -1,4 +1,5 @@
 class TestimonialsController < ApplicationController
+  before_filter :authenticate_admin!
 
   layout 'dashboard', :only => [:index, :new, :edit]
   

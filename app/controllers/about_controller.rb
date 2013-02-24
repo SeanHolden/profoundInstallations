@@ -1,4 +1,5 @@
 class AboutController < ApplicationController
+  before_filter :authenticate_admin!
   layout 'dashboard'
 
   # GET

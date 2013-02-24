@@ -46,14 +46,6 @@ ActiveRecord::Schema.define(:version => 20130220224652) do
     t.string   "slug"
   end
 
-  create_table "cms_layouts", :force => true do |t|
-    t.text     "tagline"
-    t.string   "location"
-    t.string   "telephone"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "images", :force => true do |t|
     t.integer  "gallery_id"
     t.string   "file_location"
