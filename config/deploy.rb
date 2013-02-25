@@ -8,9 +8,7 @@ server "198.211.124.44", :app, :web, :db, :primary => true
 set :deploy_to, "/var/www/#{application}"
 
 # SSH
-default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
-ssh_options[:paranoid] = true
 
 # 'cap deploy:tail' to tail logs
 desc "tail log files"
