@@ -20,6 +20,7 @@ class Image < ActiveRecord::Base
       filename = Image.check_if_image_exists(image, gallery_id, directory_location)
       tmp = image.tempfile
       file = File.join(directory_location, filename)
+      puts "file ---> #{file}"
       FileUtils.cp tmp.path, file
       sliced_location = directory_location.gsub('public','')
       Image.create(:gallery_id=>gallery_id, :file_location=>sliced_location+'/'+filename)
