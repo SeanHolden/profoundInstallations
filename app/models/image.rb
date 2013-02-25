@@ -21,13 +21,13 @@ class Image < ActiveRecord::Base
       tmp = image.tempfile
       file = File.join(directory_location, filename)
       FileUtils.cp tmp.path, file
-      sliced_location = directory_location.gsub('public/assets/','')
+      sliced_location = directory_location.gsub('public','')
       Image.create(:gallery_id=>gallery_id, :file_location=>sliced_location+'/'+filename)
     end
   end
 
   def self.check_if_image_exists(image, gallery_id, directory_location)
-    sliced_location = directory_location.gsub('public/assets/','')
+    sliced_location = directory_location.gsub('public','')
     filename = image.original_filename.split('.')
     file_location = sliced_location+'/'+filename[0]
     file_exists = Image.where("file_location REGEXP '#{file_location}' AND gallery_id = #{gallery_id}")
