@@ -22,8 +22,8 @@ class Image < ActiveRecord::Base
       file = File.join(directory_location, filename)
       puts "file ---> #{file}"
       FileUtils.cp tmp.path, file
-      sliced_location = directory_location.gsub('public','')
-      Image.create(:gallery_id=>gallery_id, :file_location=>sliced_location+'/'+filename)
+      sliced_location = directory_location.gsub("#{Rails.root}/public","")
+      Image.create!(:gallery_id=>gallery_id, :file_location=>sliced_location+'/'+filename)
     end
   end
 
