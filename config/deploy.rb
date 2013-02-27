@@ -6,6 +6,7 @@ set :repository, "git@github.com:SeanHolden/#{application}.git"
 set :user, "root"
 server "198.211.124.44", :app, :web, :db, :primary => true
 set :deploy_to, "/var/www/#{application}"
+# set :deploy_via, :remote_cache
 
 # SSH
 ssh_options[:forward_agent] = true

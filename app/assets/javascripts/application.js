@@ -14,10 +14,7 @@
 //= require jquery_ujs
 // require_self
 // require_tree .
-//= require twitter/bootstrap/bootstrap-collapse
-//= require twitter/bootstrap/bootstrap-transition
-//= require twitter/bootstrap/bootstrap-alert
-//= require twitter/bootstrap/bootstrap-button
+//= require twitter/bootstrap
 //= require jquery.fancybox.pack
 //= require jquery-scrolltofixed-min
 //= require profoundinstallations
