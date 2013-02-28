@@ -22,7 +22,7 @@ class Image < ActiveRecord::Base
       file = File.join(directory_location, filename)
       FileUtils.cp tmp.path, file
       # Give permission to view the images to users:
-      FileUtils.chmod_R 0775 "/home/deploy/apps/profoundInstallations/static"
+      FileUtils.chmod_R(0775, "/home/deploy/apps/profoundInstallations/static")
       sliced_location = directory_location.gsub("/home/deploy/apps/profoundInstallations/static","")
       Image.create!(:gallery_id=>gallery_id, :file_location=>sliced_location+'/'+filename)
     end
