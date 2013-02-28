@@ -16,7 +16,6 @@ class GalleryUploadsController < ApplicationController
     if Image.check_images_are_valid(images) == true && album_title != ''
       album.save
       gallery_id = album.id
-      # directory_location = "public/images/albums/#{slug}"
       directory_location = "/home/deploy/apps/profoundInstallations/static/images/albums/#{slug}"
       FileUtils.mkdir directory_location
       Image.upload_images(images, directory_location, gallery_id)
