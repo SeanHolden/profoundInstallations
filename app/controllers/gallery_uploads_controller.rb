@@ -16,7 +16,8 @@ class GalleryUploadsController < ApplicationController
     if Image.check_images_are_valid(images) == true && album_title != ''
       album.save
       gallery_id = album.id
-      directory_location = "public/images/albums/#{slug}"
+      # directory_location = "public/images/albums/#{slug}"
+      directory_location = "/home/deploy/apps/profoundInstallations/static/images/albums/#{slug}"
       FileUtils.mkdir directory_location
       Image.upload_images(images, directory_location, gallery_id)
       cover_image = Image.find_by_gallery_id(gallery_id).file_location
@@ -32,7 +33,7 @@ class GalleryUploadsController < ApplicationController
     album = Album.find(id).destroy
     # Destroy all images that were inside this album.
     Image.where(gallery_id: id).destroy_all
-    FileUtils.rm_rf("public/images/albums/#{album.slug}")
+    FileUtils.rm_rf("/home/deploy/apps/profoundInstallations/static/images/albums/#{album.slug}")
     redirect_to gallery_uploads_path, :notice => 'Successfully deleted album'
   end
 

@@ -27,7 +27,7 @@
   <% @albums.each do |album| %>  
       <div class="span img-polaroid-container">
         <div class="img-polaroid">
-          <%= image_tag("http://www.profoundinstallations.com#{album.cover_image.gsub('public','')}", :alt => album.title) %>
+          <%= image_tag("#{album.cover_image}", :alt => album.title) %>
           <p><%= album.title %></p>
         </div>
         <%= button_to "Edit Album", edit_gallery_upload_path(album.id),

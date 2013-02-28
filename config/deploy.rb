@@ -2,10 +2,11 @@ require 'bundler/capistrano'
 
 set :application, "profoundInstallations"
 set :scm, :git
+set :use_sudo, false
 set :repository, "git@github.com:SeanHolden/#{application}.git"
 set :user, "deploy"
 server "198.211.124.44", :app, :web, :db, :primary => true
-set :deploy_to, "/var/www/#{application}"
+set :deploy_to, "/home/deploy/apps/#{application}"
 # set :deploy_via, :remote_cache
 
 # SSH

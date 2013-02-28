@@ -30,7 +30,7 @@
   <div class="span img-polaroid-container">
     <h4>Cover Image</h4>
     <div class="img-polaroid">
-      <%= image_tag("http://www.profoundinstallations.com#{@album.cover_image.gsub('public','')}", :alt => @album.title) %>
+      <%= image_tag("#{@album.cover_image}", :alt => @album.title) %>
     </div>
   </div>
 </div>
@@ -39,7 +39,7 @@
   <% @images.each do |image| %>
     <div class="span2 img-polaroid-container">
       <div class="img-polaroid">
-        <%= image_tag("http://www.profoundinstallations.com#{image.file_location.gsub('public','')}", :alt => image.file_location.gsub(/.*\//,'').gsub(/\..*/,'')) %>
+        <%= image_tag("#{image.file_location}", :alt => image.file_location.gsub(/.*\//,'').gsub(/\..*/,'')) %>
       </div>
         <%= button_to "Set as cover image", image_upload_path(:image_id=>image.id,:gallery_id=>image.gallery_id), 
               :method => :put, 

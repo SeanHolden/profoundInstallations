@@ -6,7 +6,8 @@ class ImageUploadsController < ApplicationController
     gallery_id = params[:gallery_id]
     album = Album.find(gallery_id)
     directory_name = album.slug
-    directory_location = "public/assets/workexamples/#{directory_name}"
+    # directory_location = "public/assets/workexamples/#{directory_name}"
+    directory_location = "/home/deploy/apps/profoundInstallations/static/images/albums/#{directory_name}"
     if Image.check_images_are_valid(images) == true
       Image.upload_images(images, directory_location, gallery_id)
       redirect_to edit_gallery_upload_path(album.id), :notice => 'Successfully added images to album.'
@@ -18,7 +19,7 @@ class ImageUploadsController < ApplicationController
   def destroy
     id = params[:id]
     image = Image.find(id).destroy
-    FileUtils.rm("#{Rails.root}/public/#{image.file_location}")
+    FileUtils.rm("public/#{image.file_location}")
     redirect_to edit_gallery_upload_path(image.gallery_id)
   end
 

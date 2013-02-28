@@ -1,7 +1,7 @@
 <div class="row"> 
   <% @images.each do |image| %>
     <div class="span2 gallery_images">
-      <%= link_to image_tag("http://www.profoundinstallations.com#{image.file_location.gsub('public','')}", :alt => '', :class => "img-polaroid2"), "http://www.profoundinstallations.com#{image.file_location.gsub('public','')}", {:rel => "group", :class => "fancybox"} %>
+      <%= link_to image_tag("#{image.file_location}", :alt => '', :class => "img-polaroid2"), "#{image.file_location}", {:rel => "group", :class => "fancybox"} %>
     </div>
   <% end %>  
 </div>
