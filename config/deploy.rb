@@ -8,6 +8,7 @@ set :user, "deploy"
 server "198.211.124.44", :app, :web, :db, :primary => true
 set :deploy_to, "/home/deploy/apps/#{application}"
 # set :deploy_via, :remote_cache
+set :keep_releases, 3
 
 # SSH
 ssh_options[:forward_agent] = true
