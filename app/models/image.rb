@@ -22,14 +22,14 @@ class Image < ActiveRecord::Base
       file = File.join(directory_location, filename)
       FileUtils.cp tmp.path, file
       # Give permission to view the images to users:
-      FileUtils.chmod_R(0775, "/home/deploy/apps/profoundInstallations/static")
-      sliced_location = directory_location.gsub("/home/deploy/apps/profoundInstallations/static","")
+      FileUtils.chmod_R(0775, "#{APP_CONFIG[Rails.env]['upload_images_path']}")
+      sliced_location = directory_location.gsub("#{APP_CONFIG[Rails.env]['upload_images_path']}","")
       Image.create!(:gallery_id=>gallery_id, :file_location=>sliced_location+'/'+filename)
     end
   end
 
   def self.check_if_image_exists(image, gallery_id, directory_location)
-    sliced_location = directory_location.gsub("/home/deploy/apps/profoundInstallations/static","")
+    sliced_location = directory_location.gsub("#{APP_CONFIG[Rails.env]['upload_images_path']}","")
     filename = image.original_filename.split('.')
     file_location = sliced_location+'/'+filename[0]
     file_exists = Image.where("file_location REGEXP '#{file_location}' AND gallery_id = #{gallery_id}")

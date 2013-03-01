@@ -16,6 +16,13 @@
 <div class='content'>
   <%= link_to '<< Back to all albums', gallery_uploads_path %>
   <h1 class='album_title'><%= @album.title %></h1>
+
+  <%= form_tag(gallery_upload_path(params[:id]), :method => :put) do %>
+    <%= label_tag 'title', 'Edit Album Title:' %>
+    <%= text_field_tag 'title', @album.title %>
+    <%= submit_tag 'Edit title', :class=>'btn btn-success', :id=>'contact_submit' %>
+  <% end %>
+
   <h2>Add more images to this album...</h2>
   <div>
     <%= form_for :file_upload, :html => {:multipart => true, :id=>'gallery_upload'}, :url=>image_uploads_path(:gallery_id=>@album.id) do |f| %>
