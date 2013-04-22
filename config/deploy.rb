@@ -16,7 +16,7 @@ ssh_options[:forward_agent] = true
 # 'cap deploy:tail' to tail logs
 desc "tail log files"
 task :tail, :roles => :app do
-  run "tail -f #{current_path}/log/#{rails_env}.log" do |channel, stream, data|
+  run "tail -f #{shared_path}/log/#{rails_env}.log" do |channel, stream, data|
     puts "#{channel[:host]}: #{data}"
     break if stream == :err
   end
