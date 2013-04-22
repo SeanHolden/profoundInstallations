@@ -44,8 +44,8 @@ ProfoundInstallations::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'domain_name',
-    :user_name            => APP_CONFIG['email_address_from'],
-    :password             => APP_CONFIG['email_password'],
+    :user_name            => APP_CONFIG[Rails.env]['email_address_from'],
+    :password             => APP_CONFIG[Rails.env]['email_password'],
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 end
