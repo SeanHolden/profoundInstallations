@@ -1,8 +1,8 @@
 // Show preview of what is about to be uploaded
 
-window.onload = function () {
+$(document).ready(function() {
   local_files_added();
-};
+});
 
 function list_files(){
   var all_files = $('#file_upload_my_files').get(0).files

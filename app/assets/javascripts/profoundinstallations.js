@@ -1,4 +1,4 @@
-window.onload = function () {
+$(document).ready(function() {
     
   // fancybox
   $(".fancybox").fancybox({
@@ -42,5 +42,4 @@ window.onload = function () {
   $("#contact_form").submit(function() {
     return submitDetails();
   });
-
-};
+});
